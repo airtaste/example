@@ -35,7 +35,8 @@ class LessonActivityRepositoryUnitTest extends Specification {
                 UUID.randomUUID(),
                 ( 1..5 ).collect { UUID.randomUUID() },
                 randomizer.nextLong(),
-                randomizer.nextLong() )
+                randomizer.nextLong()
+        )
 
         then: 'mongo is called as expected'
         1 * mongoOperations.aggregate( !null as Aggregation, collectionName, LessonActivityData ) >> { Aggregation aggregation, collection, data ->

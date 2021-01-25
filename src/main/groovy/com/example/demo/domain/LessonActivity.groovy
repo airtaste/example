@@ -22,7 +22,7 @@ import org.springframework.data.mongodb.core.mapping.Field
 @EqualsAndHashCode( excludes = ['id', 'version'] )
 @CompoundIndexes( [
         @CompoundIndex( name = 'optimistic_concurrency_idx', def = "{ '_id': 1, 'version': 1 }" ),
-        @CompoundIndex( name = 'user_id_lesson_id_date_idx', def = "{ 'external-user-id': 1, 'lesson-id': 1, 'date-code': 1 }" )
+        @CompoundIndex( name = 'user_id_lesson_id_date_idx', def = "{ 'user-id': 1, 'lesson-id': 1, 'date-code': 1 }" )
 ] )
 class LessonActivity {
 
